@@ -6638,24 +6638,29 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.AspNetCore.Mvc.DataAnnotations >= 2.2.0",
+      "Microsoft.EntityFrameworkCore.Analyzers >= 5.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anth\\.nuget\\packages\\": {}
+    "C:\\Users\\Jun Yan\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anth\\Source\\Repos\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum.csproj",
+      "projectUniqueName": "C:\\Users\\Jun Yan\\Coding Devlopment\\webappdev4sem\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum.csproj",
       "projectName": "GBCSporting2021_Caeruleum",
-      "projectPath": "C:\\Users\\anth\\Source\\Repos\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum.csproj",
-      "packagesPath": "C:\\Users\\anth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anth\\Source\\Repos\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\obj\\",
+      "projectPath": "C:\\Users\\Jun Yan\\Coding Devlopment\\webappdev4sem\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum.csproj",
+      "packagesPath": "C:\\Users\\Jun Yan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jun Yan\\Coding Devlopment\\webappdev4sem\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\anth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jun Yan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6684,6 +6689,10 @@
           "Microsoft.AspNetCore.Mvc.DataAnnotations": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Analyzers": {
+            "target": "Package",
+            "version": "[5.0.3, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
