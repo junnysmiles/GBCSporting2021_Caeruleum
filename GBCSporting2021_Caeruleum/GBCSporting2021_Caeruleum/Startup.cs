@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using GBCSporting2021_Caeruleum.Models;
 
 namespace GBCSporting2021_Caeruleum
 {
@@ -23,7 +25,8 @@ namespace GBCSporting2021_Caeruleum
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+          services.AddControllersWithViews();
+      services.AddDbContext<CaeruleumContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CaeruleumContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
