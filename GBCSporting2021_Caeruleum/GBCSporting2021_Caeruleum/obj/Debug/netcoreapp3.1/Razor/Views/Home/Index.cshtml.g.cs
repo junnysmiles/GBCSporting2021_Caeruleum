@@ -19,8 +19,15 @@ using GBCSporting2021_Caeruleum;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\Views\_ViewImports.cshtml"
+using GBCSporting2021_Caeruleum.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d753861dcda3ca85267cb81a322d0ce57ed4b95", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"89413ed6bac51510bbb24f611a7e91795018f32d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b189dd2d6469a78768b46b5cb351718051c96de7", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link link-info"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -77,7 +84,7 @@ using GBCSporting2021_Caeruleum;
     <table class=""table table-bordered"">
         <tr>
             <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b957347", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b957621", async() => {
                 WriteLiteral("Manage Products");
             }
             );
@@ -98,7 +105,7 @@ using GBCSporting2021_Caeruleum;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n        </tr>\r\n        <tr>\r\n            <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b959054", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b959328", async() => {
                 WriteLiteral("Manage Technicians");
             }
             );
@@ -119,7 +126,7 @@ using GBCSporting2021_Caeruleum;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n        </tr>\r\n        <tr>\r\n            <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b9510764", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b9511038", async() => {
                 WriteLiteral("Manage Customers");
             }
             );
@@ -140,7 +147,7 @@ using GBCSporting2021_Caeruleum;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n        </tr>\r\n        <tr>\r\n            <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b9512473", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b9512747", async() => {
                 WriteLiteral("Manage Incidents");
             }
             );
@@ -161,7 +168,7 @@ using GBCSporting2021_Caeruleum;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n        </tr>\r\n        <tr>\r\n            <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b9514182", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d753861dcda3ca85267cb81a322d0ce57ed4b9514456", async() => {
                 WriteLiteral("Manage Registrations");
             }
             );
