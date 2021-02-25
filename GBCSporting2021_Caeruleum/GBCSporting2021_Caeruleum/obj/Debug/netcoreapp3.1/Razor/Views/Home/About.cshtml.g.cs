@@ -19,8 +19,15 @@ using GBCSporting2021_Caeruleum;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\Views\_ViewImports.cshtml"
+using GBCSporting2021_Caeruleum.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b11b86bb6019a3219b678bcec95e92d59a82282b", @"/Views/Home/About.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"89413ed6bac51510bbb24f611a7e91795018f32d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b189dd2d6469a78768b46b5cb351718051c96de7", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_About : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
