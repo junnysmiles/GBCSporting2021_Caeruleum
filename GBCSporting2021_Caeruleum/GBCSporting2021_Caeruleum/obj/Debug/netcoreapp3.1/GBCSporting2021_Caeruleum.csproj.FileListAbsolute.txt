@@ -82,3 +82,6 @@ C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSp
 C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\obj\Debug\netcoreapp3.1\Razor\Views\Incident\Incident.cshtml.g.cs
 C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Registration.cshtml.g.cs
+C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\obj\Debug\netcoreapp3.1\Razor\Views\Product\Add.cshtml.g.cs
+C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\obj\Debug\netcoreapp3.1\Razor\Views\Product\Delete.cshtml.g.cs
+C:\Users\Jun Yan\Coding Devlopment\webappdev4sem\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\GBCSporting2021_Caeruleum\obj\Debug\netcoreapp3.1\Razor\Views\Product\Edit.cshtml.g.cs

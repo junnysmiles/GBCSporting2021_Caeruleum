@@ -10,7 +10,7 @@
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Release Date</th>
-            <th scope="col"></th>
+            <th></th>
             <th scope="col"></th>
         </thead>
         <tbody>
@@ -18,8 +18,9 @@
             <td>filler</td>
             <td>filler</td>
             <td>filler</td>
-            <td>Edit</td>
-            <td>Delete</td>
+            <td><a asp-area="" asp-controller="Product" asp-action="Edit"><button type="button" class="btn btn-secondary">Edit</button></a></td>
+            <td><a asp-area="" asp-controller="Product" asp-action="Delete"><button type="button" class="btn btn-danger">Delete</button></a></td>
         </tbody>
     </table>
+    <a asp-area="" asp-controller="Product" asp-action="Add"><button type="button" class="btn btn-info">Add Product</button></a>
 </div>
