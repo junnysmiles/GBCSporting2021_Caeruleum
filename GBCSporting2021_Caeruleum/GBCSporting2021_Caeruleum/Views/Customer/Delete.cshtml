@@ -1,15 +1,20 @@
 ﻿@model Product
 @{
-  ViewData["Title"] = "Delete Customer";
+    ViewData["Title"] = "Delete Customer";
 }
 
-<h1>Delete Customer</h1>
+<div class="pt-4">
+    <h1 class="pb-3">Delete Customer</h1>
 
-<p>Delete this Customer?</p>
+    <p>Delete this Customer?</p>
 
-<p>Sample Customer</p>
+    <p>Sample Customer</p>
+</div>
 
-<form asp-action="Delete" method="post">
-  <button type="submit" class="btn btn-danger">Delete</button>
-  <a asp-controller="Customer" asp-action="Customer" class="btn btn-primary">Cancel</a>
-</form>
+<div class="pt-3">
+    <form asp-action="Delete" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Customer" asp-action="Customer" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
