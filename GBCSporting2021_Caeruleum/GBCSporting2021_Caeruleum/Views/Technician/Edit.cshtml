@@ -1,0 +1,23 @@
+﻿@model Technician
+@{
+  string title = ViewBag.Action + " Technician";
+  ViewData["Title"] = ViewBag.Title;
+
+}
+
+<h2>@title</h2>
+
+<form asp-action="Edit" method="post">
+
+  <label asp-for="FirstName">First Name</label>
+  <input asp-for="FirstName">
+
+  <label asp-for="LastName">Last Name</label>
+  <input asp-for="LastName">
+
+  <label asp-for="Phone">Phone Number</label>
+  <input asp-for="Phone">
+
+  <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+  <a asp-controller="Customer" asp-action="Customer" class="btn btn-primary">Cancel</a>
+</form>
