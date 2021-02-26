@@ -1,3 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Incidents";
+  ViewData["Title"] = "Incidents";
 }
+
+<div class="pt-4">
+  <h2 class="pb-2">Manage Incidents</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Product</th>
+        <th scope="col">Date Opened</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    
+    </thead>
+    <tbody>
+      <tr>
+        <td>filler</td>
+        <td>filler</td>
+        <td>filler</td>
+        <td>filler</td>
+        <td><a asp-area="" asp-controller="Product" asp-action="Edit">Edit</a></td>
+        <td><a asp-area="" asp-controller="Product" asp-action="Delete">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <a asp-area="" asp-controller="Product" asp-action="Add">Add Product</a>
+</div>
