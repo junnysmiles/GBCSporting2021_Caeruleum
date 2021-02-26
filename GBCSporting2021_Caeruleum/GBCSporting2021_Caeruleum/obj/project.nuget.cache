@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MDX8GS4DgJs8wW75Fpv6UUOpjF/IrhFPp8vydHSOHLLflckc2+K7rHhgWD6q0AAnYBC7rzdQSGnCBTI+KeBpjQ==",
+  "dgSpecHash": "1QSv8C4RgnXgVMbjG0EY+z8ut9c5FTyJvMc/nPG0JMmbWMbtk62NG4aKbxCMvN63EviBAnnsdnP7YWrrhC9uqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jun Yan\\Coding Devlopment\\webappdev4sem\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum.csproj",
+  "projectFilePath": "C:\\Users\\Jun Yan\\Coding Devlopment\\webappdev4sem\\GBCSport2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum\\GBCSporting2021_Caeruleum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jun Yan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jun Yan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
