@@ -15,6 +15,5 @@ namespace GBCSporting2021_Caeruleum.Models
     public int ProductId { get; set; }
     [ForeignKey("ProductId")]
     public Product Product { get; set; }
-
   }
 }
