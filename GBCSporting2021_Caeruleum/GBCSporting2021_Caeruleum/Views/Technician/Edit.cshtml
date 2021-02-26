@@ -5,19 +5,26 @@
 
 }
 
-<h2>@title</h2>
+<div class="pt-4">
+    <h2 class="pb-3">@title</h2>
+</div>
 
 <form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName">First Name</label>
+        <input asp-for="FirstName" class="form-control">
+    </div>
 
-  <label asp-for="FirstName">First Name</label>
-  <input asp-for="FirstName">
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" class="form-control">
+    </div>
 
-  <label asp-for="LastName">Last Name</label>
-  <input asp-for="LastName">
+    <div class="form-group">
+        <label asp-for="Phone">Phone Number</label>
+        <input asp-for="Phone" class="form-control">
+    </div>
 
-  <label asp-for="Phone">Phone Number</label>
-  <input asp-for="Phone">
-
-  <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
-  <a asp-controller="Technician" asp-action="Technician" class="btn btn-primary">Cancel</a>
+    <button type="submit" class="btn btn-info">@ViewBag.Action</button>
+    <a asp-controller="Technician" asp-action="Technician" class="btn btn-danger">Cancel</a>
 </form>

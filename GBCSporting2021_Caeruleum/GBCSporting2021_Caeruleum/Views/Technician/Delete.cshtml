@@ -3,13 +3,17 @@
   ViewData["Title"] = "Delete ";
 }
 
-<h1>Delete Technician</h1>
+<div class="pt-4">
+    <h1 class="pb-3">Delete Technician</h1>
 
-<p>Delete this Technician?</p>
+    <p>Delete this Technician?</p>
 
-<p>Sample Technician</p>
+    <p>Sample Technician</p>
+</div>
 
-<form asp-action="Delete" method="post">
-  <button type="submit" class="btn btn-danger">Delete</button>
-  <a asp-controller="Technician" asp-action="Technician" class="btn btn-primary">Cancel</a>
-</form>
+<div class="pt-3">
+    <form asp-action="Delete" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Technician" asp-action="Technician" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
