@@ -1,0 +1,15 @@
+﻿@model Registration
+@{
+    ViewData["Title"] = "Delete Registration";
+}
+
+<h1>Delete Registration</h1>
+
+<p>Delete this Registration?</p>
+
+<p>Sample Registration</p>
+
+<form asp-action="Delete" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-controller="Registration" asp-action="Registration" class="btn btn-primary">Cancel</a>
+</form>
