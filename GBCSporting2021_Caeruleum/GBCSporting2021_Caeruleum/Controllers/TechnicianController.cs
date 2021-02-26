@@ -18,5 +18,17 @@ namespace GBCSporting2021_Caeruleum.Controllers
             ViewData["Message"] = "Technicians Page";
             return View();
         }
+
+        public IActionResult Edit()
+        {
+            ViewData["Message"] = "Edit Technician Page";
+            return View();
+        }
+
+        public IActionResult Delete()
+        {
+            ViewData["Message"] = "Delete Technician Page";
+            return View();
+        }
     }
 }

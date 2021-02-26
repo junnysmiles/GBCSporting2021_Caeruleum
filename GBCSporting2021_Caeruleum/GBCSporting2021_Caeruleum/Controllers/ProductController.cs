@@ -19,12 +19,6 @@ namespace GBCSporting2021_Caeruleum.Controllers
             return View();
         }
 
-        public IActionResult Add()
-        {
-            ViewData["Message"] = "Add Product Page";
-            return View();
-        }
-
         public IActionResult Edit()
         {
             ViewData["Message"] = "Edit Product Page";
