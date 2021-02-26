@@ -3,13 +3,17 @@
     ViewData["Title"] = "Delete Registration";
 }
 
-<h1>Delete Registration</h1>
+<div class="pt-4">
+    <h1 class="pb-3">Delete Registration</h1>
 
-<p>Delete this Registration?</p>
+    <p>Delete this Registration?</p>
 
-<p>Sample Registration</p>
+    <p>Sample Registration</p>
+</div>
 
-<form asp-action="Delete" method="post">
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a asp-controller="Registration" asp-action="Registration" class="btn btn-primary">Cancel</a>
-</form>
+<div class="pt-3">
+    <form asp-action="Delete" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Registration" asp-action="Registration" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

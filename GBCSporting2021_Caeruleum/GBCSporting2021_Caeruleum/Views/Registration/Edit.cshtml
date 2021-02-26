@@ -1,10 +1,12 @@
 ﻿@model Registration
 @{
-    string title = ViewBag.Action + "Registration";
+    string title = ViewBag.Action + " Registration";
     ViewData["Title"] = ViewBag.Title;
 }
 
-<h2>@title</h2>
+<div class="pt-4">
+    <h2>@title</h2>
+</div>
 
 <form asp-action="Edit" method="post">
     <div class="form-group">
@@ -28,6 +30,6 @@
             <option>Clothes</option>
         </select>
     </div>
-    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
-    <a asp-controller="Registration" asp-action="Registration" class="btn btn-primary">Cancel</a>
+    <button type="submit" class="btn btn-info">@ViewBag.Action</button>
+    <a asp-controller="Registration" asp-action="Registration" class="btn btn-danger">Cancel</a>
 </form>
