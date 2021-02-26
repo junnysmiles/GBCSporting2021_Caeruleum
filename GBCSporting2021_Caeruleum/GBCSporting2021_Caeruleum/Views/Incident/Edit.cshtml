@@ -1,0 +1,54 @@
+﻿@model Incident
+@{
+    string title = ViewBag.Action + "Incident";
+    ViewData["Title"] = ViewBag.Title;
+}
+
+<h2>@title</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="Customer">Customer</label>
+        <select class="form-control">
+            <option>Ben Jerry</option>
+            <option>Tony Stark</option>
+            <option>Bruce Wayne</option>
+            <option>Clark Kent</option>
+            <option>Harvey Dent</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Product">Product</label>
+        <select class="form-control">
+            <option>Toys</option>
+            <option>Cars</option>
+            <option>Phones</option>
+            <option>Computers</option>
+            <option>Clothes</option>
+        </select>
+    </div>
+
+    <label asp-for="Title">Title</label>
+    <input asp-for="Title">
+
+    <div class="form-group">
+        <label for="Technician">Technician</label>
+        <select class="form-control">
+            <option>Jerry</option>
+            <option>Tom</option>
+            <option>Dan</option>
+            <option>Harry</option>
+            <option>Timmy</option>
+        </select>
+    </div>
+
+    <label asp-for="OpenDate">OpenDate</label>
+    <input asp-for="OpenDate">
+
+    <label asp-for="CloseDate">CloseDate</label>
+    <input asp-for="CloseDate">
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+    <a asp-controller="Customer" asp-action="Customer" class="btn btn-primary">Cancel</a>
+</form>
