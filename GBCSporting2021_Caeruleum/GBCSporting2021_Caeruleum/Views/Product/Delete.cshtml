@@ -3,13 +3,17 @@
   ViewData["Title"] = "Delete Product";
 }
 
-<h1>Delete Product</h1>
+<div class="pt-4">
+    <h1 class="pb-3">Delete Product</h1>
 
-<p>Delete this Product?</p>
+    <p>Delete this Product?</p>
 
-<p>Sample Product</p>
+    <p>Sample Product</p>
+</div>
 
-<form asp-action="Delete" method="post">
-  <button type="submit" class="btn btn-danger">Delete</button>
-  <a asp-controller="Product" asp-action="Product" class="btn btn-primary">Cancel</a>
-</form>
+<div class="pt-3">
+    <form asp-action="Delete" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Product" asp-action="Product" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
