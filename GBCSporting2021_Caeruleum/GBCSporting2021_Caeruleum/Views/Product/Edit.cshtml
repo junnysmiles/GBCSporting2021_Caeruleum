@@ -1,3 +1,36 @@
-﻿@{
-    ViewData["Title"] = "Edit Product";
+﻿@model Product
+@{
+  string title = ViewBag.Action + " Product";
+  ViewData["Title"] = ViewBag.Title;
+
 }
+<h2>@title</h2>
+
+<form asp-action="Edit" method="post">
+
+  <label asp-for="Code">Code</label>
+  <input asp-for="Code">
+
+  <label asp-for="Name">Name</label>
+  <input asp-for="Code">
+
+  <div class="form-group">
+    <label for="Country">Country</label>
+    <select class="form-control">
+      <option>Canada</option>
+      <option>France</option>
+      <option>Germany</option>
+      <option>Italy</option>
+      <option>Spain</option>
+    </select>
+  </div>
+
+  <label asp-for="Price">Price</label>
+  <input asp-for="Price">
+
+  <label asp-for="ReleaseDate">Release Date</label>
+  <input type="date" asp-for="ReleaseDate" />
+
+  <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+  <a asp-controller="Product" asp-action="Product" class="btn btn-primary">Cancel</a>
+</form>

@@ -1,0 +1,15 @@
+﻿@model Product
+@{
+  ViewData["Title"] = "Delete Customer";
+}
+
+<h1>Delete Customer</h1>
+
+<p>Delete this Customer?</p>
+
+<p>Sample Customer</p>
+
+<form asp-action="Delete" method="post">
+  <button type="submit" class="btn btn-danger">Delete</button>
+  <a asp-controller="Customer" asp-action="Customer" class="btn btn-primary">Cancel</a>
+</form>

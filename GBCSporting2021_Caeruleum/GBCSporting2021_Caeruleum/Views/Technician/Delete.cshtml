@@ -1,0 +1,15 @@
+﻿@model Technician
+@{
+  ViewData["Title"] = "Delete ";
+}
+
+<h1>Delete Technician</h1>
+
+<p>Delete this Technician?</p>
+
+<p>Sample Technician</p>
+
+<form asp-action="Delete" method="post">
+  <button type="submit" class="btn btn-danger">Delete</button>
+  <a asp-controller="Technician" asp-action="Technician" class="btn btn-primary">Cancel</a>
+</form>
