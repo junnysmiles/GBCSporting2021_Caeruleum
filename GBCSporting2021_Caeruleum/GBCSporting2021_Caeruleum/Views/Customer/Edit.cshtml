@@ -1,0 +1,43 @@
+﻿@model Customer
+@{
+  string title = ViewBag.Action + " Customer";
+  ViewData["Title"] = ViewBag.Title;
+
+}
+
+<h2>@title</h2>
+
+<form asp-action="Edit" method="post">
+
+  <label asp-for="FirstName">First Name</label>
+  <input asp-for="FirstName">
+
+  <label asp-for="LastName">Last Name</label>
+  <input asp-for="LastName">
+
+  <div class="form-group">
+    <label for="Country">Country</label>
+    <select class="form-control">
+      <option>Canada</option>
+      <option>France</option>
+      <option>Germany</option>
+      <option>Italy</option>
+      <option>Spain</option>
+    </select>
+  </div>
+
+  <label asp-for="Address">Address</label>
+  <input asp-for="Address">
+
+  <label asp-for="City">City</label>
+  <input asp-for="City">
+
+  <label asp-for="PostalCode">Postal Code</label>
+  <input asp-for="PostalCode">
+
+  <label asp-for="Phone">Phone Number</label>
+  <input asp-for="Phone">
+
+  <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+  <a asp-controller="Customer" asp-action="Customer" class="btn btn-primary">Cancel</a>
+</form>
