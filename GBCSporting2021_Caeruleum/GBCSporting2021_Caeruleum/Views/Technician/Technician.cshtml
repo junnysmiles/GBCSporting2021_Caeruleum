@@ -1,3 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Technicians";
+  ViewData["Title"] = "Technicians";
 }
+<div class="pt-4">
+  <h2 class="pb-2">Technician Manager</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr>
+        <td>filler</td>
+        <td>filler</td>
+        <td>filler</td>
+        <td><a asp-area="" asp-controller="Registration" asp-action="Edit">Edit</a></td>
+        <td><a asp-area="" asp-controller="Registration" asp-action="Delete">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <a asp-area="" asp-controller="Add Technician" asp-action="Add">Register Technician</a>
+</div>
