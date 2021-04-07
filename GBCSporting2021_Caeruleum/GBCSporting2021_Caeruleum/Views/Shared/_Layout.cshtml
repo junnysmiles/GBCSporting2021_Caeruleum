@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@{
+  string ActiveNav(string action)
+  {
+    string currentAction = ViewContext.RouteData.Values["Action"].ToString();
+    return (action == currentAction) ? "active" : "";
+  }
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -19,25 +26,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link @ActiveNav("Index")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Product" asp-action="Product">Products</a>
+                            <a class="nav-link @ActiveNav("Product")" asp-area="" asp-controller="Product" asp-action="Product">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Technician" asp-action="Technician">Technicians</a>
+                            <a class="nav-link @ActiveNav("Technician")" asp-area="" asp-controller="Technician" asp-action="Technician">Technicians</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Customer" asp-action="Customer">Customers</a>
+                            <a class="nav-link @ActiveNav("Customer")" asp-area="" asp-controller="Customer" asp-action="Customer">Customers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Incident" asp-action="Incident">Incidents</a>
+                            <a class="nav-link @ActiveNav("Incident")" asp-area="" asp-controller="Incident" asp-action="Incident">Incidents</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Registration" asp-action="Registration">Registrations</a>
+                            <a class="nav-link @ActiveNav("Registration")" asp-area="" asp-controller="Registration" asp-action="Registration">Registrations</a>
                         </li>
                         <li class="nav-item ml-auto">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            <a class="nav-link @ActiveNav("About")" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
                     </ul>
                 </div>
