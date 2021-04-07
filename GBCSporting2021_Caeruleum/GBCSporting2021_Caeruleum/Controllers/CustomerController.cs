@@ -9,11 +9,13 @@ namespace GBCSporting2021_Caeruleum.Controllers
 {
   public class CustomerController : Controller
   {
+    
     public IActionResult Index()
     {
       return View();
     }
 
+    [Route("/customers")]
     public IActionResult Customer()
     {
       ViewData["Message"] = "Customers Page";
@@ -23,7 +25,6 @@ namespace GBCSporting2021_Caeruleum.Controllers
     public IActionResult Add()
     {
       ViewBag.Action = "Add";
-
       return View("Edit", new Customer());
     }
 

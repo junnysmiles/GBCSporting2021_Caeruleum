@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace GBCSporting2021_Caeruleum.Controllers
 {
-    public class HomeController : Controller
+  public class HomeController : Controller
+  {
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "About Page";
-            return View();
-        }
+      return View();
     }
+
+    [Route("/about")]
+    public IActionResult About()
+    {
+
+      ViewData["Message"] = "About Page";
+      return View();
+    }
+  }
 }

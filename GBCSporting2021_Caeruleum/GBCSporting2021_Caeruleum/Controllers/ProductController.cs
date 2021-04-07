@@ -14,6 +14,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       return View();
     }
 
+    [Route("/products")]
     public IActionResult Product()
     {
       ViewData["Message"] = "Products Page";

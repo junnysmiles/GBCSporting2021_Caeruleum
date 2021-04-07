@@ -14,6 +14,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       return View();
     }
 
+    [Route("/incidents")]
     public IActionResult Incident()
     {
       ViewData["Message"] = "Incidents Page";
