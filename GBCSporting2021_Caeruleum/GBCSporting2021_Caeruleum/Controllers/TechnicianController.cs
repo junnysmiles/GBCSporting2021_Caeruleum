@@ -14,6 +14,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       return View();
     }
 
+    [Route("/technicians")]
     public IActionResult Technician()
     {
       ViewData["Message"] = "Technicians Page";

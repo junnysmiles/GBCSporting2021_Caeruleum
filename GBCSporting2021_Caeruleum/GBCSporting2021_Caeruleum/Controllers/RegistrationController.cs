@@ -14,6 +14,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       return View();
     }
 
+    [Route("/registrations")]
     public IActionResult Registration()
     {
       ViewData["Message"] = "Registrations Page";
