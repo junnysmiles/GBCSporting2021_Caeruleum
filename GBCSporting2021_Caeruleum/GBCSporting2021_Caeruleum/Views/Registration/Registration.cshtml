@@ -19,8 +19,8 @@
       @foreach(Registration r in Model)
       {
         <tr>
-          <td>@String.Format("{0}, {1}", r.Customer.FirstName, r.Customer.LastName)</td>
-          <td>@r.Product.Name</td>
+          <td>@ViewBag.CustomerName</td>
+          <td>@ViewBag.ProductName</td>
           <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Registration" asp-action="Edit">Edit</a></td>
           <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Registration" asp-action="Delete">Delete</a></td>
         </tr>

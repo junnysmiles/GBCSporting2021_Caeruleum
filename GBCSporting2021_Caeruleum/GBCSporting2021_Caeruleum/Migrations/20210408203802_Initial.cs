@@ -32,7 +32,8 @@ namespace GBCSporting2021_Caeruleum.Migrations
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CountryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,14 +46,26 @@ namespace GBCSporting2021_Caeruleum.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CountryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Registrations",
+                columns: table => new
+                {
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
                 });
 
             migrationBuilder.CreateTable(
@@ -69,52 +82,6 @@ namespace GBCSporting2021_Caeruleum.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Technicians", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CountryCustomers",
-                columns: table => new
-                {
-                    CountryId = table.Column<int>(type: "int", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.ForeignKey(
-                        name: "FK_CountryCustomers_Countries_CountryId",
-                        column: x => x.CountryId,
-                        principalTable: "Countries",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CountryCustomers_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Registrations",
-                columns: table => new
-                {
-                    CustomerId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.ForeignKey(
-                        name: "FK_Registrations_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Registrations_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,15 +121,25 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_CountryCustomers_CountryId",
-                table: "CountryCustomers",
-                column: "CountryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CountryCustomers_CustomerId",
-                table: "CountryCustomers",
-                column: "CustomerId");
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Austria" },
+                    { 2, "Canada" },
+                    { 3, "England" },
+                    { 4, "France" },
+                    { 5, "Germany" },
+                    { 6, "Greece" },
+                    { 7, "Hungary" },
+                    { 8, "Italy" },
+                    { 9, "Ireland" },
+                    { 10, "Portugal" },
+                    { 11, "Scotland" },
+                    { 12, "Spain" },
+                    { 13, "United States" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Incidents_CustomerId",
@@ -178,22 +155,12 @@ namespace GBCSporting2021_Caeruleum.Migrations
                 name: "IX_Incidents_TechnicianId",
                 table: "Incidents",
                 column: "TechnicianId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Registrations_CustomerId",
-                table: "Registrations",
-                column: "CustomerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Registrations_ProductId",
-                table: "Registrations",
-                column: "ProductId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CountryCustomers");
+                name: "Countries");
 
             migrationBuilder.DropTable(
                 name: "Incidents");
@@ -202,16 +169,13 @@ namespace GBCSporting2021_Caeruleum.Migrations
                 name: "Registrations");
 
             migrationBuilder.DropTable(
-                name: "Countries");
-
-            migrationBuilder.DropTable(
-                name: "Technicians");
-
-            migrationBuilder.DropTable(
                 name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "Technicians");
         }
     }
 }

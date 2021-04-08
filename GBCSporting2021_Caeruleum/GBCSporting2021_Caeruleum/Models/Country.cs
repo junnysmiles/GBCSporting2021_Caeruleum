@@ -10,6 +10,5 @@ namespace GBCSporting2021_Caeruleum.Models
   {
     public int Id { get; set; }
     public string Name { get; set; }
-
   }
 }
