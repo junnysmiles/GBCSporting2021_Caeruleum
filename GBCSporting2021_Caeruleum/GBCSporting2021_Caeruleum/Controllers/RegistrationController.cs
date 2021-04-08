@@ -9,16 +9,14 @@ namespace GBCSporting2021_Caeruleum.Controllers
 {
   public class RegistrationController : Controller
   {
-    public IActionResult Index()
-    {
-      return View();
-    }
+    private CaeruleumContext context { get; set; }
+    public RegistrationController(CaeruleumContext ctx) => context = ctx;
 
     [Route("/registrations")]
     public IActionResult Registration()
     {
       ViewData["Message"] = "Registrations Page";
-      return View();
+      return View(context.Registrations.ToList());
     }
 
     public IActionResult Add()
@@ -27,16 +25,35 @@ namespace GBCSporting2021_Caeruleum.Controllers
       return View("Edit", new Registration());
     }
 
+    [HttpPost]
+    public IActionResult Add(Registration r)
+    {
+      return View("Registration");
+    }
+
     public IActionResult Edit()
     {
+      ViewBag.Action = "Edit";
       ViewData["Message"] = "Edit Registration Page";
       return View();
+    }
+
+    [HttpPost]
+    public IActionResult Edit(int id, Registration r)
+    {
+      return View("Registration");
     }
 
     public IActionResult Delete()
     {
       ViewData["Message"] = "Delete Registration Page";
       return View();
+    }
+
+    [HttpPost]
+    public IActionResult Delete(int id)
+    {
+      return View("Registration");
     }
   }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GBCSporting2021_Caeruleum.Migrations
 {
     [DbContext(typeof(CaeruleumContext))]
-    [Migration("20210223181927_Initial")]
+    [Migration("20210408122328_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,6 +66,10 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -107,6 +111,9 @@ namespace GBCSporting2021_Caeruleum.Migrations
                     b.Property<DateTime>("OpenDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<int>("TechnicianId")
                         .HasColumnType("int");
 
@@ -117,6 +124,8 @@ namespace GBCSporting2021_Caeruleum.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("ProductId");
 
                     b.HasIndex("TechnicianId");
 
@@ -131,7 +140,6 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Code")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -219,6 +227,12 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("GBCSporting2021_Caeruleum.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("GBCSporting2021_Caeruleum.Models.Technician", "Technician")
                         .WithMany()
                         .HasForeignKey("TechnicianId")
@@ -226,6 +240,8 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .IsRequired();
 
                     b.Navigation("Customer");
+
+                    b.Navigation("Product");
 
                     b.Navigation("Technician");
                 });
