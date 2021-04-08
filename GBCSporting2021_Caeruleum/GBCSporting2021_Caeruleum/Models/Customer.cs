@@ -21,5 +21,7 @@ namespace GBCSporting2021_Caeruleum.Models
     public string PostalCode { get; set; }
     [Required(ErrorMessage = "Phone number is required.")]
     public string Phone { get; set; }
+    [Required(ErrorMessage = "Email address is required.")]
+    public string Email { get; set; }
   }
 }
