@@ -8,8 +8,8 @@ namespace GBCSporting2021_Caeruleum.Models
 {
   public class Product
   {
-    [Required(ErrorMessage = "Product code required.")]
     public int Id { get; set; }
+    [Required(ErrorMessage = "Product code required.")]
     public string Code { get; set; }
     [Required(ErrorMessage = "Product name is required.")]
     public string Name { get; set; }

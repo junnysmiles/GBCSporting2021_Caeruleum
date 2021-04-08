@@ -24,7 +24,6 @@ namespace GBCSporting2021_Caeruleum.Models
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      base.OnModelCreating(modelBuilder);
       modelBuilder.Entity<CountryCustomer>().HasNoKey();
       modelBuilder.Entity<Registration>().HasNoKey();
     }
