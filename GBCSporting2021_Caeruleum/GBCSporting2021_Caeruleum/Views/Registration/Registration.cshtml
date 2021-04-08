@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Registrations";
+﻿@model IEnumerable<Registration>
+@{
+  ViewData["Title"] = "Registrations";
 }
 
 <div class="pt-4">
@@ -15,12 +16,15 @@
 
     </thead>
     <tbody>
-      <tr>
-        <td>filler</td>
-        <td>filler</td>
-        <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Registration" asp-action="Edit">Edit</a></td>
-        <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Registration" asp-action="Delete">Delete</a></td>
-      </tr>
+      @foreach(Registration r in Model)
+      {
+        <tr>
+          <td>@String.Format("{0}, {1}", r.Customer.FirstName, r.Customer.LastName)</td>
+          <td>@r.Product.Name</td>
+          <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Registration" asp-action="Edit">Edit</a></td>
+          <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Registration" asp-action="Delete">Delete</a></td>
+        </tr>
+      }
     </tbody>
   </table>
   <a type="button" class="btn btn-info" asp-area="" asp-controller="Registration" asp-action="Add">Register Customer</a>

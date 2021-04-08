@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Incident>
+@{
   ViewData["Title"] = "Incidents";
 }
 
@@ -14,17 +15,20 @@
         <th scope="col"></th>
         <th scope="col"></th>
       </tr>
-    
+
     </thead>
     <tbody>
-      <tr>
-        <td>filler</td>
-        <td>filler</td>
-        <td>filler</td>
-        <td>filler</td>
-        <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Incident" asp-action="Edit">Edit</a></td>
-        <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Incident" asp-action="Delete">Delete</a></td>
-      </tr>
+      @foreach(Incident i in Model)
+      {
+        <tr>
+          <td>@i.Title</td>
+          <td>@String.Format("{0}, {1}", i.Customer.FirstName, i.Customer.LastName)</td>
+          <td>@i.Product.Name</td>
+          <td>@i.OpenDate/td>
+          <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Incident" asp-action="Edit">Edit</a></td>
+          <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Incident" asp-action="Delete">Delete</a></td>
+        </tr>
+      }
     </tbody>
   </table>
   <a type="button" class="btn btn-info" asp-area="" asp-controller="Incident" asp-action="Add">Add Incident</a>
