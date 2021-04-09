@@ -1,29 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Technicians";
+﻿@model IEnumerable<Technician>
+@{
+  ViewData["Title"] = "Technicians";
 }
 
 <div class="pt-4">
-    <h2 class="pb-2">Manage Technicians</h2>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
+  <h2 class="pb-2">Manage Technicians</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
 
-        </thead>
-        <tbody>
-            <tr>
-                <td>filler</td>
-                <td>filler</td>
-                <td>filler</td>
-                <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Technician" asp-action="Edit">Edit</a></td>
-                <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Technician" asp-action="Delete">Delete</a></td>
-            </tr>
-        </tbody>
-    </table>
-    <a type="button" class="btn btn-info" asp-area="" asp-controller="Technician" asp-action="Add">Add Technician</a>
+    </thead>
+    <tbody>
+      @foreach(Technician t in Model)
+      {
+        <tr>
+          <td>@String.Format("{0} {1}", t.FirstName, t.LastName)</td>
+          <td>@t.Email</td>
+          <td>@t.Phone</td>
+          <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Technician" asp-action="Edit" asp-route-id="@t.Id">Edit</a></td>
+          <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Technician" asp-action="Delete" asp-route-id="@t.Id">Delete</a></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <a type="button" class="btn btn-info" asp-area="" asp-controller="Technician" asp-action="Add">Add Technician</a>
 </div> 

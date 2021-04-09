@@ -1,19 +1,33 @@
 ﻿@model Technician
 @{
-  ViewData["Title"] = "Delete ";
+  ViewData["Title"] = "Delete Technician";
 }
 
 <div class="pt-4">
-    <h1 class="pb-3">Delete Technician</h1>
-
-    <p>Delete this Technician?</p>
-
-    <p>Sample Technician</p>
+  <h1 class="pb-3">Delete This Technician?</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@ViewBag.FirstName</td>
+        <td>@ViewBag.LastName</td>
+        <td>@ViewBag.Email</td>
+        <td>@ViewBag.Phone</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="pt-3">
-    <form asp-action="Delete" method="post">
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a asp-controller="Technician" asp-action="Technician" class="btn btn-secondary">Cancel</a>
-    </form>
+  <form asp-action="Delete" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-controller="Product" asp-action="Product" class="btn btn-secondary">Cancel</a>
+  </form>
 </div>

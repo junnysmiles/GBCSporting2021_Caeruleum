@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Registrations";
+﻿@model IEnumerable<Registration>
+@{
+  ViewData["Title"] = "Registrations";
 }
 
 <div class="pt-4">
@@ -15,12 +16,41 @@
 
     </thead>
     <tbody>
-      <tr>
-        <td>filler</td>
-        <td>filler</td>
-        <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Registration" asp-action="Edit">Edit</a></td>
-        <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Registration" asp-action="Delete">Delete</a></td>
-      </tr>
+      @foreach(Registration r in Model)
+      {
+
+        bool borked = false;
+        Customer c = ViewBag.Customers.Find(r.CustomerId);
+        Product p = ViewBag.Products.Find(r.ProductId);
+        <tr>
+          @if(c != null)
+          {
+            <td>@String.Format("{0} {1}", c.FirstName, c.LastName)</td>
+          }
+          else
+          {
+            borked = true;
+          }
+
+          @if(p != null)
+          {
+            <td>@p.Name</td>
+          }
+          else
+          {
+            borked = true;
+          }
+          @if(!borked)
+          {
+            <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Registration" asp-action="Edit" asp-route-id="@r.Id">Edit</a></td>
+          }
+          else
+          {
+            <td></td>
+          }
+          <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Registration" asp-action="Delete" asp-route-id="@r.Id">Delete</a></td>
+        </tr>
+      }
     </tbody>
   </table>
   <a type="button" class="btn btn-info" asp-area="" asp-controller="Registration" asp-action="Add">Register Customer</a>

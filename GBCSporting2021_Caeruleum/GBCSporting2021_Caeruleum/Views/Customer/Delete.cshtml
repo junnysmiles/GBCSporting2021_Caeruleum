@@ -1,20 +1,40 @@
-﻿@model Product
+﻿@model Customer
 @{
-    ViewData["Title"] = "Delete Customer";
+  ViewData["Title"] = "Delete Customer";
 }
 
 <div class="pt-4">
-    <h1 class="pb-3">Delete Customer</h1>
-
-    <p>Delete this Customer?</p>
-
-    <p>Sample Customer</p>
+  <h1 class="pb-3">Delete Customer</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Postal Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@String.Format("{0}, {1}", ViewBag.FirstName, ViewBag.LastName)</td>
+        <td>@ViewBag.Phone</td>
+        <td>@ViewBag.Email</td>
+        <td>@ViewBag.Address</td>
+        <td>@ViewBag.City</td>
+        <td>@ViewBag.Country</td>
+        <td>@ViewBag.PostalCode</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="pt-3">
-    <form asp-action="Delete" method="post">
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a asp-controller="Customer" asp-action="Customer" class="btn btn-secondary">Cancel</a>
-    </form>
+  <form asp-action="Delete" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-controller="Customer" asp-action="Customer" class="btn btn-secondary">Cancel</a>
+  </form>
 </div>
 

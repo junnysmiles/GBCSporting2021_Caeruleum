@@ -1,29 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Customer";
+﻿@model IEnumerable<Customer>
+@{
+  ViewData["Title"] = "Customer";
 }
 
 <div class="pt-4">
-    <h2 class="pb-2">Manage Customers</h2>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">City</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
+  <h2 class="pb-2">Manage Customers</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">City</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
 
-        </thead>
-        <tbody>
-            <tr>
-                <td>filler</td>
-                <td>filler</td>
-                <td>filler</td>
-                <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Customer" asp-action="Edit">Edit</a></td>
-                <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Customer" asp-action="Delete">Delete</a></td>
-            </tr>
-        </tbody>
-    </table>
-    <a type="button" class="btn btn-info" asp-area="" asp-controller="Customer" asp-action="Add">Add Customer</a>
+    </thead>
+    <tbody>
+      @foreach(Customer c in Model)
+      {
+        <tr>
+          <td>@String.Format("{0} {1}", c.FirstName, c.LastName)</td>
+          <td>@c.Email</td>
+          <td>@c.City</td>
+          <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Customer" asp-action="Edit" asp-route-id="@c.Id">Edit</a></td>
+          <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Customer" asp-action="Delete" asp-route-id="@c.Id">Delete</a></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <a type="button" class="btn btn-info" asp-area="" asp-controller="Customer" asp-action="Add">Add Customer</a>
 </div>

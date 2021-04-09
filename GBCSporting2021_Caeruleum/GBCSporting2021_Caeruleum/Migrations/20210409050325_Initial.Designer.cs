@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GBCSporting2021_Caeruleum.Migrations
 {
     [DbContext(typeof(CaeruleumContext))]
-    [Migration("20210223181927_Initial")]
+    [Migration("20210409050325_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,21 +34,73 @@ namespace GBCSporting2021_Caeruleum.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries");
-                });
 
-            modelBuilder.Entity("GBCSporting2021_Caeruleum.Models.CountryCustomer", b =>
-                {
-                    b.Property<int>("CountryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("CountryId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("CountryCustomers");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Austria"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Canada"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "England"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "France"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Germany"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Greece"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Hungary"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Italy"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Ireland"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Portugal"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Scotland"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Spain"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "United States"
+                        });
                 });
 
             modelBuilder.Entity("GBCSporting2021_Caeruleum.Models.Customer", b =>
@@ -66,6 +118,13 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -75,7 +134,6 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PostalCode")
@@ -94,7 +152,7 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CloseDate")
+                    b.Property<DateTime?>("CloseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("CustomerId")
@@ -107,7 +165,11 @@ namespace GBCSporting2021_Caeruleum.Migrations
                     b.Property<DateTime>("OpenDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TechnicianId")
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TechnicianId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -115,10 +177,6 @@ namespace GBCSporting2021_Caeruleum.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("TechnicianId");
 
                     b.ToTable("Incidents");
                 });
@@ -133,6 +191,9 @@ namespace GBCSporting2021_Caeruleum.Migrations
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -151,15 +212,18 @@ namespace GBCSporting2021_Caeruleum.Migrations
 
             modelBuilder.Entity("GBCSporting2021_Caeruleum.Models.Registration", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("ProductId");
+                    b.HasKey("Id");
 
                     b.ToTable("Registrations");
                 });
@@ -190,63 +254,6 @@ namespace GBCSporting2021_Caeruleum.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Technicians");
-                });
-
-            modelBuilder.Entity("GBCSporting2021_Caeruleum.Models.CountryCustomer", b =>
-                {
-                    b.HasOne("GBCSporting2021_Caeruleum.Models.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GBCSporting2021_Caeruleum.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Country");
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("GBCSporting2021_Caeruleum.Models.Incident", b =>
-                {
-                    b.HasOne("GBCSporting2021_Caeruleum.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GBCSporting2021_Caeruleum.Models.Technician", "Technician")
-                        .WithMany()
-                        .HasForeignKey("TechnicianId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Technician");
-                });
-
-            modelBuilder.Entity("GBCSporting2021_Caeruleum.Models.Registration", b =>
-                {
-                    b.HasOne("GBCSporting2021_Caeruleum.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GBCSporting2021_Caeruleum.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

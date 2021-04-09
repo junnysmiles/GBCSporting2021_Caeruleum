@@ -1,56 +1,56 @@
 ﻿@model Customer
 @{
-    string title = ViewBag.Action + " Customer";
-    ViewData["Title"] = ViewBag.Title;
+  string title = ViewBag.Action + " Customer";
+  ViewData["Title"] = ViewBag.Action;
 }
 
 <div class="pt-4">
-    <h2 class="pb-3">@title</h2>
+  <h2 class="pb-3">@title</h2>
 </div>
 
-<form asp-action="Edit" method="post">
-    <div class="form-group">
-        <label asp-for="FirstName">First Name</label>
-        <input asp-for="FirstName" class="form-control">
-    </div>
+<form asp-action="@ViewBag.Action" method="post">
+  <div class="form-group">
+    <label asp-for="FirstName">First Name</label>
+    <input asp-for="FirstName" value="@ViewBag.FirstName" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label asp-for="LastName">Last Name</label>
-        <input asp-for="LastName" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="LastName">Last Name</label>
+    <input asp-for="LastName" value="@ViewBag.LastName" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label for="Country">Country</label>
-        <select class="form-control">
-            <option>Canada</option>
-            <option>France</option>
-            <option>Germany</option>
-            <option>Italy</option>
-            <option>Spain</option>
-        </select>
-    </div>
+  <div class="form-group">
+    <label for="CountryId">Country</label>
+    <select asp-for="CountryId" class="form-control" asp-items="@(new SelectList(ViewBag.Countries, "Id", "Name", ViewBag.CountryId))">
+    </select>
+  </div>
 
-    <div class="form-group">
-        <label asp-for="Address">Address</label>
-        <input asp-for="Address" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="Address">Address</label>
+    <input asp-for="Address" value="@ViewBag.Address" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label asp-for="City">City</label>
-        <input asp-for="City" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="City">City</label>
+    <input asp-for="City" value="@ViewBag.City" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label asp-for="PostalCode">Postal Code</label>
-        <input asp-for="PostalCode" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="PostalCode">Postal Code</label>
+    <input asp-for="PostalCode" value="@ViewBag.PostalCode" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label asp-for="Phone">Phone Number</label>
-        <input asp-for="Phone" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="Phone">Phone Number</label>
+    <input asp-for="Phone" value="@ViewBag.Phone" class="form-control">
+  </div>
 
-    <button type="submit" class="btn btn-info">@ViewBag.Action</button>
-    <a asp-controller="Customer" asp-action="Customer" class="btn btn-danger">Cancel</a>
+  <div class="form-group">
+    <label asp-for="Email">Email Address</label>
+    <input asp-for="Email" value="@ViewBag.Email" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-info">@ViewBag.Action</button>
+  <a asp-controller="Customer" asp-action="Customer" class="btn btn-danger">Cancel</a>
 </form>
 

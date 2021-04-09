@@ -4,16 +4,31 @@
 }
 
 <div class="pt-4">
-    <h1 class="pb-3">Delete Product</h1>
-
-    <p>Delete this Product?</p>
-
-    <p>Sample Product</p>
+  <h1 class="pb-3">Delete This Product?</h1>
+  <h2>@ViewBag.Name</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Price</th>
+        <th>Release Date</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@ViewBag.Code</td>
+        <td>@ViewBag.Price</td>
+        <td>@ViewBag.ReleaseDate</td>
+        <td>@ViewBag.Country</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="pt-3">
-    <form asp-action="Delete" method="post">
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a asp-controller="Product" asp-action="Product" class="btn btn-secondary">Cancel</a>
-    </form>
+  <form asp-action="Delete" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-controller="Product" asp-action="Product" class="btn btn-secondary">Cancel</a>
+  </form>
 </div>

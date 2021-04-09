@@ -1,45 +1,40 @@
 ﻿@model Product
 @{
   string title = ViewBag.Action + " Product";
-  ViewData["Title"] = ViewBag.Title;
-
+  ViewData["Title"] = ViewBag.Action;
 }
+
 <div class="pt-4">
-    <h2 class="pb-3">@title</h2>
+  <h2 class="pb-3">@title</h2>
 </div>
 
-<form asp-action="Edit" method="post">
-    <div class="form-group">
-        <label asp-for="Code">Code</label>
-        <input asp-for="Code" class="form-control">
-    </div>
+<form asp-action="@ViewBag.Action" method="post">
+  <div class="form-group">
+    <label asp-for="Code">Code</label>
+    <input type="text" asp-for="Code" value="@ViewBag.Code" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label asp-for="Name">Name</label>
-        <input asp-for="Code" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="Name">Name</label>
+    <input type="text" asp-for="Name" value="@ViewBag.Name" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label for="Country">Country</label>
-        <select class="form-control">
-            <option>Canada</option>
-            <option>France</option>
-            <option>Germany</option>
-            <option>Italy</option>
-            <option>Spain</option>
-        </select>
-    </div>
+  <div class="form-group">
+    <label for="CountryId">Country</label>
+    <select asp-for="CountryId" class="form-control" asp-items="@(new SelectList(ViewBag.Countries, "Id", "Name", ViewBag.CountryId))">
+    </select>
+  </div>
 
-    <div class="form-group">
-        <label asp-for="Price">Price</label>
-        <input asp-for="Price" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="Price">Price</label>
+    <input asp-for="Price" value="@ViewBag.Price" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label asp-for="ReleaseDate">Release Date</label>
-        <input type="date" asp-for="ReleaseDate" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="ReleaseDate">Release Date</label>
+    <input type="date" asp-for="ReleaseDate" value="@ViewBag.ReleaseDate" class="form-control">
+  </div>
 
-    <button type="submit" placeholder="Submit" class="btn btn-info">@ViewBag.Action</button>
-    <a asp-controller="Product" asp-action="Product" class="btn btn-danger">Cancel</a>
+  <button type="submit" placeholder="Submit" class="btn btn-primary">@ViewBag.Action</button>
+  <a asp-controller="Product" asp-action="Product" class="btn btn-danger">Cancel</a>
 </form>
