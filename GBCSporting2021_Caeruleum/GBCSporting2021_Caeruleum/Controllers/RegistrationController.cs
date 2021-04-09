@@ -18,6 +18,8 @@ namespace GBCSporting2021_Caeruleum.Controllers
     {
       ViewBag.Customers = context.Customers;
       ViewBag.Products = context.Products;
+      ViewBag.CustomerCount = context.Customers.ToList().Count;
+      ViewBag.ProductCount = context.Products.ToList().Count;
       ViewData["Message"] = "Registrations Page";
       return View(context.Registrations.ToList());
     }

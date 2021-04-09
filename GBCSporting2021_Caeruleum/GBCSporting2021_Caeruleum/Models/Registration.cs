@@ -11,10 +11,12 @@ namespace GBCSporting2021_Caeruleum.Models
   {
     public int Id { get; set; }
 
-    [ForeignKey("CustomerId")]
+    [ForeignKey("Customer")]
+    [Required(ErrorMessage = "Customer is required!")]
     public int CustomerId { get; set; }
 
-    [ForeignKey("ProductId")]
+    [ForeignKey("Product")]
+    [Required(ErrorMessage = "Product is required!")]
     public int ProductId { get; set; }
   }
 }

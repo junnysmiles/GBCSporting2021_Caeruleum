@@ -16,11 +16,11 @@ namespace GBCSporting2021_Caeruleum.Models
     public int CustomerId { get; set; }
 
     [Required(ErrorMessage = "Product is required for incident report.")]
-    [ForeignKey("ProductId")]
+    [ForeignKey("Product")]
     public int ProductId { get; set; }
 
     [Required(ErrorMessage = "Technician needs to be assigned to incident.")]
-    [ForeignKey("TechnicianId")]
+    [ForeignKey("Technician")]
     public int? TechnicianId { get; set; }
  
     [Required(ErrorMessage = "Title is required.")]
@@ -38,6 +38,5 @@ namespace GBCSporting2021_Caeruleum.Models
     {
       return dateTime == null ? "" : ((DateTime)dateTime).ToString(format);
     }
-
   }
 }

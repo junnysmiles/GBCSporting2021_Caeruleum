@@ -53,5 +53,8 @@
       }
     </tbody>
   </table>
-  <a type="button" class="btn btn-info" asp-area="" asp-controller="Registration" asp-action="Add">Register Customer</a>
+  @if(ViewBag.CustomerCount > 0 && ViewBag.ProductCount > 0)
+  {
+    <a type="button" class="btn btn-info" asp-area="" asp-controller="Registration" asp-action="Add">Register Customer</a>
+  }
 </div>
