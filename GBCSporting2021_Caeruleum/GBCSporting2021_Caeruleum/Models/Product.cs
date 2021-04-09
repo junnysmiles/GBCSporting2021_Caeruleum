@@ -21,7 +21,7 @@ namespace GBCSporting2021_Caeruleum.Models
     public DateTime ReleaseDate { get; set; }
 
     [Required(ErrorMessage = "Country is required.")]
-    [ForeignKey("CountryId")]
+    [ForeignKey("Country")]
     public int CountryId { get; set; }
   }
 }

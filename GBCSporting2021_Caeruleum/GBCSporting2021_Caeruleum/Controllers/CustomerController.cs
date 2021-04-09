@@ -53,6 +53,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       ViewBag.Phone = c.Phone;
       ViewBag.Email = c.Email;
       ViewBag.City = c.City;
+      ViewBag.State = c.State;
       ViewBag.PostalCode = c.PostalCode;
       ViewBag.CountryId = c.CountryId;
       ViewBag.Address = c.Address;
@@ -77,6 +78,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
         ViewBag.LastName = c.LastName;
         ViewBag.Phone = c.Phone;
         ViewBag.City = c.City;
+        ViewBag.State = c.State;
         ViewBag.PostalCode = c.PostalCode;
         ViewBag.CountryId = c.CountryId;
         ViewBag.Address = c.Address;
@@ -96,6 +98,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       ViewBag.Phone = cstmr.Phone;
       ViewBag.Email = cstmr.Email;
       ViewBag.City = cstmr.City;
+      ViewBag.State = cstmr.State;
       ViewBag.PostalCode = cstmr.PostalCode;
       ViewBag.Country = cntry.Name;
       ViewBag.Address = cstmr.Address;

@@ -13,17 +13,19 @@
         <th>Email</th>
         <th>Address</th>
         <th>City</th>
+        <th>State</th>
         <th>Country</th>
         <th>Postal Code</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>@String.Format("{0}, {1}", ViewBag.FirstName, ViewBag.LastName)</td>
+        <td>@String.Format("{0} {1}", ViewBag.FirstName, ViewBag.LastName)</td>
         <td>@ViewBag.Phone</td>
         <td>@ViewBag.Email</td>
         <td>@ViewBag.Address</td>
         <td>@ViewBag.City</td>
+        <td>@ViewBag.State</td>
         <td>@ViewBag.Country</td>
         <td>@ViewBag.PostalCode</td>
       </tr>

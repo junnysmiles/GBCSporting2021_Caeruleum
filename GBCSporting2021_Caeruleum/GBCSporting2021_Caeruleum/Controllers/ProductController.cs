@@ -27,6 +27,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       return View("Edit");
     }
 
+
     [HttpPost]
     public IActionResult Add(Product p)
     {
@@ -112,6 +113,12 @@ namespace GBCSporting2021_Caeruleum.Controllers
         ModelState.AddModelError("", String.Format("Product with id {0}, no longer exists in the database.", p.Id));
         return RedirectToAction("Product");
       }
+    }
+
+    public RedirectToActionResult Cancel()
+    {
+      TempData.Clear();
+      return RedirectToAction("Product");
     }
   }
 }
