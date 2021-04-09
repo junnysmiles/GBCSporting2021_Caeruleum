@@ -9,6 +9,8 @@ namespace GBCSporting2021_Caeruleum.Models
 {
   public class Registration
   {
+    public int Id { get; set; }
+
     [ForeignKey("CustomerId")]
     public int CustomerId { get; set; }
 

@@ -16,6 +16,7 @@ namespace GBCSporting2021_Caeruleum.Models
     public string Name { get; set; }
     [Required(ErrorMessage = "Price is required.")]
     public double Price { get; set; }
+
     [Required(ErrorMessage = "Release date is required.")]
     public DateTime ReleaseDate { get; set; }
 

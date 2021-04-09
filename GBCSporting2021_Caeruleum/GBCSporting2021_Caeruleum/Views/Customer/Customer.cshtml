@@ -20,7 +20,7 @@
       @foreach(Customer c in Model)
       {
         <tr>
-          <td>@String.Format("{0}, {1}", c.FirstName, c.LastName)</td>
+          <td>@String.Format("{0} {1}", c.FirstName, c.LastName)</td>
           <td>@c.Email</td>
           <td>@c.City</td>
           <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Customer" asp-action="Edit" asp-route-id="@c.Id">Edit</a></td>

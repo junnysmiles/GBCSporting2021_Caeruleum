@@ -4,11 +4,34 @@
 }
 
 <div class="pt-4">
-    <h1 class="pb-3">Delete Incident</h1>
-
-    <p>Delete this Incident?</p>
-
-    <p>Sample Incident</p>
+    <h1 class="pb-3">Delete This Incident</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Customer</th>
+          <th>Product</th>
+          <th>Technician</th>
+          <th>Date Opened</th>
+          <th>Date Closed</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr>
+          <td>@Model.Title</td>
+          <td>@Model.Description</td>
+          <td>@ViewBag.CustomerName</td>
+          <td>@ViewBag.ProductName</td>
+          <td>@ViewBag.TechnicianName</td>
+          <td>@Model.OpenDate.ToString("yyyy-MM-dd")</td>
+          <td>@Model.NullDateToString(Model.CloseDate, "yyyy-MM-dd")</td>
+        </tr>
+      </tbody>
+      <tr>
+      </tr>
+    </table>
 </div>
 
 <div class="pt-3">

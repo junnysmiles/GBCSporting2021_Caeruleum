@@ -1,19 +1,30 @@
 ﻿@model Registration
 @{
-    ViewData["Title"] = "Delete Registration";
+  ViewData["Title"] = "Delete Registration";
 }
 
 <div class="pt-4">
-    <h1 class="pb-3">Delete Registration</h1>
+  <h1 class="pb-3">Delete This Registration?</h1>
 
-    <p>Delete this Registration?</p>
-
-    <p>Sample Registration</p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Customer</td>
+        <td>Product</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>@ViewBag.CustomerName</td>
+        <td>@ViewBag.ProductName</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="pt-3">
-    <form asp-action="Delete" method="post">
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a asp-controller="Registration" asp-action="Registration" class="btn btn-secondary">Cancel</a>
-    </form>
+  <form asp-action="Delete" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-controller="Registration" asp-action="Registration" class="btn btn-secondary">Cancel</a>
+  </form>
 </div>

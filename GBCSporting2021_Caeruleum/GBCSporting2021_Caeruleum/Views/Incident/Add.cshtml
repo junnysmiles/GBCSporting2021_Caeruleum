@@ -1,0 +1,85 @@
+﻿@model Incident
+@{
+  string title = ViewBag.Action + " Incident";
+  ViewData["Title"] = ViewBag.Title;
+}
+
+<div class="pt-4">
+  <h2>@title</h2>
+</div>
+
+<form asp-action="@ViewBag.Action" method="post">
+  <div class="form-group">
+    <label for="CustomerId">Customer</label>
+    <select asp-for="CustomerId" class="form-control">
+      @foreach(Customer c in ViewBag.Customers)
+      {
+        if(ViewBag.CustomerId != c.Id)
+        {
+          <option value="@c.Id">@(String.Format("{0} {1}", c.FirstName, c.LastName))</option>
+        }
+        else
+        {
+          <option selected value="@c.Id">@(String.Format("{0} {1}", c.FirstName, c.LastName))</option>
+        }
+      }
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="ProductId">Product</label>
+    <select asp-for="ProductId" class="form-control">
+      @foreach(Product p in ViewBag.Products)
+      {
+        if(ViewBag.ProductId == p.Id)
+        {
+          <option value="@p.Id">@p.Name</option>
+        }
+        else
+        {
+          <option selected value="@p.Id">@p.Name</option>
+        }
+      }
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Title">Title</label>
+    <input asp-for="Title" value="@ViewBag.Title" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label asp-for="Description">Description</label>
+    <input asp-for="Description" value="@ViewBag.Description" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label asp-for="OpenDate">OpenDate</label>
+    <input type="date" asp-for="OpenDate" value="@ViewBag.OpenDate" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label asp-for="CloseDate">CloseDate</label>
+    <input type="date" asp-for="CloseDate" value="@ViewBag.CloseDate" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="TechnicianId">Technician</label>
+    <select asp-for="TechnicianId" class="form-control">
+      <option value="0"></option>
+      @foreach(Technician t in ViewBag.Technicians)
+      {
+        if(ViewBag.TechnicianId != t.Id)
+        {
+          <option value="@t.Id">@String.Format("{0} {1}", t.FirstName, t.LastName)</option>
+        }
+        else
+        {
+          <option selected value="@t.Id">@String.Format("{0} {1}", t.FirstName, t.LastName)</option>
+        }
+      }
+    </select>
+  </div>
+  <button type="submit" class="btn btn-info">@ViewBag.Action</button>
+  <a asp-controller="Incident" asp-action="Incident" class="btn btn-danger">Cancel</a>
+</form>

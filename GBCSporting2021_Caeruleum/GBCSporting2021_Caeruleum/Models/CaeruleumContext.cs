@@ -24,7 +24,6 @@ namespace GBCSporting2021_Caeruleum.Models
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       base.OnModelCreating(modelBuilder);
-      modelBuilder.Entity<Registration>().HasNoKey();
 
       modelBuilder.Entity<Country>().HasData(
         new Country() { Id = 1, Name = "Austria" },

@@ -1,35 +1,46 @@
 ﻿@model Registration
 @{
-    string title = ViewBag.Action + " Registration";
-    ViewData["Title"] = ViewBag.Title;
+  string title = ViewBag.Action + " Registration";
+  ViewData["Title"] = ViewBag.Action;
 }
 
 <div class="pt-4">
-    <h2>@title</h2>
+  <h2>@title</h2>
 </div>
 
-<form asp-action="Edit" method="post">
-    <div class="form-group">
-        <label for="Customer">Customer</label>
-        <select class="form-control">
-            <option>Ben Jerry</option>
-            <option>Tony Stark</option>
-            <option>Bruce Wayne</option>
-            <option>Clark Kent</option>
-            <option>Harvey Dent</option>
-        </select>
-    </div>
+<form asp-action="@ViewBag.Action" method="post">
+  <div class="form-group">
+    <label asp-for="CustomerId">Customer</label>
+    @if(ViewBag.Action == "Add")
+    {
+      <select asp-for="CustomerId" class="form-control">
+        @foreach(Customer c in ViewBag.Customers)
+        {
+          <option value="@c.Id">@String.Format("{0} {1}", c.FirstName, c.LastName)</option>
 
-    <div class="form-group">
-        <label for="Product">Product</label>
-        <select class="form-control">
-            <option>Toys</option>
-            <option>Cars</option>
-            <option>Phones</option>
-            <option>Computers</option>
-            <option>Clothes</option>
-        </select>
-    </div>
-    <button type="submit" class="btn btn-info">@ViewBag.Action</button>
-    <a asp-controller="Registration" asp-action="Registration" class="btn btn-danger">Cancel</a>
+        }
+      </select>
+    }
+    else
+    {
+      <input asp-for="CustomerId" type="hidden" value="@ViewBag.CustomerId">
+      <p>@String.Format("{0}", ViewBag.CustomerName)</p>
+    }
+
+  </div>
+
+  <div class="form-group">
+    <label for="ProductId">Product</label>
+    <select asp-for="ProductId" class="form-control">
+      @foreach(Product p in ViewBag.Products)
+      {
+        @if(ViewBag.ProductId != p.Id)
+        {
+          <option value="@p.Id">@p.Name</option>
+        }
+      }
+    </select>
+  </div>
+  <button type="submit" class="btn btn-info">@ViewBag.Action</button>
+  <a asp-controller="Registration" asp-action="Registration" class="btn btn-danger">Cancel</a>
 </form>

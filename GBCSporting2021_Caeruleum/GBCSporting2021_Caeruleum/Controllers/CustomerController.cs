@@ -45,14 +45,6 @@ namespace GBCSporting2021_Caeruleum.Controllers
       }
     }
 
-    public IActionResult Edit()
-    {
-      ViewBag.Action = "Edit";
-      ViewData["Message"] = "Edit Customer Page";
-      return View();
-    }
-
-    [HttpPost]
     public IActionResult Edit(int Id)
     {
       Customer c = context.Customers.Find(Id);
@@ -67,7 +59,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       ViewBag.Action = "Edit";
       ViewBag.Countries = context.Countries.ToList();
       ViewData["Message"] = "Edit Customer Page";
-      return View("Customer");
+      return View("Edit");
     }
 
     [HttpPost]

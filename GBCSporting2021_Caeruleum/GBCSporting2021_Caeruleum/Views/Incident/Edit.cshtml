@@ -1,62 +1,37 @@
 ﻿@model Incident
 @{
-    string title = ViewBag.Action + " Incident";
-    ViewData["Title"] = ViewBag.Title;
+  string title = ViewBag.Action + " Incident";
+  ViewData["Title"] = ViewBag.Action;
 }
 
 <div class="pt-4">
-    <h2>@title</h2>
+  <h2>@title</h2>
 </div>
 
-<form asp-action="Edit" method="post">
-    <div class="form-group">
-        <label for="Customer">Customer</label>
-        <select class="form-control">
-            <option>Ben Jerry</option>
-            <option>Tony Stark</option>
-            <option>Bruce Wayne</option>
-            <option>Clark Kent</option>
-            <option>Harvey Dent</option>
-        </select>
-    </div>
+<form asp-action="@ViewBag.Action" method="post">
+  <div>
+    <p>Technician: @ViewBag.TechnicianName</p>
+    <input asp-for="TechnicianId" type="hidden" value="@Model.TechnicianId">
+    <p>Customer: @ViewBag.CustomerName</p>
+    <input asp-for="CustomerId" type="hidden" value="@Model.CustomerId">
+    <p>Product: @ViewBag.ProductName</p>
+    <input asp-for="ProductId" type="hidden" value="@Model.CustomerId">
+    <p>Title: @Model.Title</p>
+    <input asp-for="Title" type="hidden" value="@Model.Title">
+    <p>Date Opened: @Model.OpenDate.ToString("yyyy-MM-dd")</p>
+    <input asp-for="OpenDate" type="hidden" value="@Model.OpenDate">
+  </div>
 
-    <div class="form-group">
-        <label for="Product">Product</label>
-        <select class="form-control">
-            <option>Toys</option>
-            <option>Cars</option>
-            <option>Phones</option>
-            <option>Computers</option>
-            <option>Clothes</option>
-        </select>
-    </div>
+  <div class="form-group">
+    <label asp-for="Description">Description</label>
+    <input asp-for="Description" value="@ViewBag.Description" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label asp-for="Title">Title</label>
-        <input asp-for="Title" class="form-control">
-    </div>
+  <div class="form-group">
+    <label asp-for="CloseDate">Date Closed</label>
+    <input type="date" asp-for="CloseDate" value="@Model.NullDateToString(Model.CloseDate, "yyyy-MM-dd")" class="form-control">
+  </div>
 
-    <div class="form-group">
-        <label for="Technician">Technician</label>
-        <select class="form-control">
-            <option>Jerry</option>
-            <option>Tom</option>
-            <option>Dan</option>
-            <option>Harry</option>
-            <option>Timmy</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="OpenDate">OpenDate</label>
-        <input asp-for="OpenDate" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label asp-for="CloseDate">CloseDate</label>
-        <input asp-for="CloseDate" class="form-control">
-    </div>
-
-    <button type="submit" class="btn btn-info">@ViewBag.Action</button>
-    <a asp-controller="Incident" asp-action="Incident" class="btn btn-danger">Cancel</a>
+  <button type="submit" class="btn btn-info">@ViewBag.Action</button>
+  <a asp-controller="Incident" asp-action="Incident" class="btn btn-danger">Cancel</a>
 </form>

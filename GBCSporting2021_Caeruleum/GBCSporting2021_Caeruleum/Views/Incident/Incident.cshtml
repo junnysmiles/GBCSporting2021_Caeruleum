@@ -20,16 +20,44 @@
     <tbody>
       @foreach(Incident i in Model)
       {
+        bool borked = false;
+        Customer c = ViewBag.Customers.Find(i.CustomerId);
+        Product p = ViewBag.Products.Find(i.ProductId);
         <tr>
           <td>@i.Title</td>
-          <td>@String.Format("{0}, {1}", i.Customer.FirstName, i.Customer.LastName)</td>
-          <td>@i.Product.Name</td>
-          <td>@i.OpenDate/td>
-          <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Incident" asp-action="Edit">Edit</a></td>
-          <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Incident" asp-action="Delete">Delete</a></td>
+          <td>
+            @if(c != null)
+            {
+              @String.Format("{0} {1}", c.FirstName, c.LastName)
+            }
+            else
+            {
+              borked = true;
+            }
+          </td>
+          <td>
+            @if(p != null)
+            {
+              @p.Name
+            }
+            else
+            {
+              borked = true;
+            }
+          </td>
+          <td>@i.OpenDate.ToString("yyyy-MM-dd")</td>
+          @if(!borked)
+          {
+            <td><a type="button" class="btn btn-warning" asp-area="" asp-controller="Incident" asp-action="Edit" asp-route-id="@i.Id">Edit</a></td>
+          }
+          else
+          {
+            <td></td>
+          }
+          <td><a type="button" class="btn btn-danger" asp-area="" asp-controller="Incident" asp-action="Delete" asp-route-id="@i.Id">Delete</a></td>
         </tr>
       }
     </tbody>
   </table>
-  <a type="button" class="btn btn-info" asp-area="" asp-controller="Incident" asp-action="Add">Add Incident</a>
+  <a type="button" class="btn btn-info" asp-controller="Incident" asp-action="Add">Add Incident</a>
 </div>
