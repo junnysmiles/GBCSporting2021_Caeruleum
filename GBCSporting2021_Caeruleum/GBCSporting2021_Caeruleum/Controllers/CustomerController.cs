@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GBCSporting2021_Caeruleum.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace GBCSporting2021_Caeruleum.Controllers
 {
