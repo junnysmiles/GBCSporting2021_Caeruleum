@@ -24,7 +24,7 @@ namespace GBCSporting2021_Caeruleum.Models
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       base.OnModelCreating(modelBuilder);
-
+      modelBuilder.Entity<Customer>().HasIndex(c => c.Email).IsUnique();
       modelBuilder.Entity<Country>().HasData(
         new Country() { Id = 1, Name = "Austria" },
         new Country() { Id = 2, Name = "Canada" },
