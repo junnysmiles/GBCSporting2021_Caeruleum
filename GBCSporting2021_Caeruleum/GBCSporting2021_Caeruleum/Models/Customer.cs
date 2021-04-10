@@ -31,10 +31,10 @@ namespace GBCSporting2021_Caeruleum.Models
 
     [Required(ErrorMessage = "Postal Code required.")]
     [StringLength(20, ErrorMessage = "Must be between 1 and 20 characters long.", MinimumLength = 1)]
-
     public string PostalCode { get; set; }
     
     [DataType(DataType.PhoneNumber)]
+    [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Must be in format (123) 456-7890")]
     public string Phone { get; set; }
     
     [Required(ErrorMessage = "Email address is required.")]
