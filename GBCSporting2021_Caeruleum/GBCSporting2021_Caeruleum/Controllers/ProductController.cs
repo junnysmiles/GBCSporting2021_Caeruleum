@@ -35,6 +35,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       {
         context.Products.Add(p);
         context.SaveChanges();
+        TempData["Message"] = String.Format("{0} was added.", p.Name);
         return RedirectToAction("Product");
       }
       else
@@ -68,6 +69,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
       {
         context.Products.Update(p);
         context.SaveChanges();
+        TempData["Message"] = String.Format("{0} was updated.", p.Name);
         return RedirectToAction("Product");
       }
       else
@@ -102,9 +104,11 @@ namespace GBCSporting2021_Caeruleum.Controllers
     [HttpPost]
     public IActionResult Delete(Product p)
     {
+      string name = p.Name;
       context.Entry(p).State = EntityState.Deleted;
       try
       {
+        TempData["Message"] = String.Format("{0} was deleted.", name);
         context.SaveChanges();
         return RedirectToAction("Product");
       }
