@@ -30,7 +30,17 @@ namespace GBCSporting2021_Caeruleum.Controllers
     [HttpPost]
     public IActionResult Add(Customer c)
     {
-      if(ModelState.IsValid)
+      List<Customer> c_list = context.Customers.ToList();
+      bool email_unique = true;
+      for(int i = 0; i < c_list.Count; i++)
+      {
+        if(c.Email == c_list[i].Email)
+        {
+          email_unique = false;
+          break;
+        }
+      }
+      if(ModelState.IsValid && email_unique)
       {
         context.Customers.Add(c);
         context.SaveChanges();
@@ -68,9 +78,28 @@ namespace GBCSporting2021_Caeruleum.Controllers
     {
       if(ModelState.IsValid && c != null)
       {
-        context.Customers.Update(c);
-        context.SaveChanges();
-        return RedirectToAction("Customer");
+        try
+        {
+          context.Customers.Update(c);
+          context.SaveChanges();
+          return RedirectToAction("Customer");
+        }
+        catch(Exception)
+        {
+          ViewBag.FirstName = c.FirstName;
+          ViewBag.LastName = c.LastName;
+          ViewBag.Phone = c.Phone;
+          ViewBag.City = c.City;
+          ViewBag.State = c.State;
+          ViewBag.PostalCode = c.PostalCode;
+          ViewBag.CountryId = c.CountryId;
+          ViewBag.Address = c.Address;
+          ViewBag.Email = c.Email;
+          ViewBag.Action = "Edit";
+          ViewBag.Countries = context.Countries.ToList();
+          ViewData["Message"] = "Edit Customer Page";
+          return View("Edit", c);
+        }
       }
       else
       {
@@ -82,6 +111,7 @@ namespace GBCSporting2021_Caeruleum.Controllers
         ViewBag.PostalCode = c.PostalCode;
         ViewBag.CountryId = c.CountryId;
         ViewBag.Address = c.Address;
+        ViewBag.Email = c.Email;
         ViewBag.Action = "Edit";
         ViewBag.Countries = context.Countries.ToList();
         ViewData["Message"] = "Edit Customer Page";
